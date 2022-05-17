@@ -6,13 +6,13 @@ public class Exercicio2 {
 		Scanner read = new Scanner(System.in);
 		String usuario;
 		String senha;
-		System.out.println("Entre com um nome de usuário: ");
+		System.out.println("Entre com o código do usuário: ");
 		usuario = read.nextLine();
 		System.out.println("Entre com uma senha: ");
 		senha = read.nextLine();
 		
 		while (senha.equalsIgnoreCase(usuario)) {
-			System.out.println("O nome de usuário e a senha nao podm ser iguais. Informe uma senha diferente: ");
+			System.out.println("O código do usuário e a senha nao podem ser iguais. Informe uma senha diferente: ");
 			senha = read.nextLine();
 		}
 		
