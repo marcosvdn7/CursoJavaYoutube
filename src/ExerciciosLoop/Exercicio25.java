@@ -8,11 +8,13 @@ public class Exercicio25 {
 		double valorProduto, troco, valorPago;
 		double totalCompra = 0;
 		boolean validacao = false;
+		int novaCompra;
 		String output;
 		
 		do {
 			qtdProdutos = 1;
-			output = "\nLojas Tabajara\n";
+			output = "\nLojas Tabajara";
+			output += "\n##############\n";
 			do {
 				while (qtdProdutos == 1) {
 					System.out.println("Informe os valores dos produtos a serem comprados(Insira 0 para terminar a compra).");
@@ -21,7 +23,7 @@ public class Exercicio25 {
 				System.out.println("Produto " +qtdProdutos+ ": ");
 				valorProduto = read.nextDouble();
 				if (valorProduto == 0) {
-					break;
+					continue;
 				}
 				output += "Produto " +qtdProdutos+ ": R$ " +valorProduto+ "\n";
 				totalCompra += valorProduto;
@@ -39,6 +41,19 @@ public class Exercicio25 {
 			troco = valorPago - totalCompra;
 			output += "Troco: R$ " +troco+ "\n";
 			System.out.println(output);
+			System.out.println("Deseja informar uma nova compra?");
+			System.out.println("1 - Sim.");
+			System.out.println("2 - Não.");
+			novaCompra = read.nextInt();
+			while (novaCompra != 1 && novaCompra != 2) {
+				System.out.println("Opção inválida! Selecione uma das opções fornecidas.");
+				System.out.println("1 - Sim.");
+				System.out.println("2 - Não.");
+				novaCompra = read.nextInt();
+			}
+			if (novaCompra == 2) {
+				validacao = true;
+			}
 		} while (!validacao);
 		read.close();
 
