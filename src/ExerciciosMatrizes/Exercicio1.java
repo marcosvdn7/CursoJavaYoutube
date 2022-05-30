@@ -9,12 +9,6 @@ public class Exercicio1 {
 		int indice2 = 0;
 		
 		for (int i = 0; i < m.length; i++) {
-			for (int j = 0; j < m[i].length; j++) {
-				m [i][j] = (int)(Math.round(Math.random() * 1));
-			}
-		}
-		
-		for (int i = 0; i < m.length; i++) {
 			System.out.println("Linha " +i);
 			for (int j = 0; j < m[i].length; j++) {
 				m [i][j] = (int)(Math.round(Math.random() * 9));
@@ -25,7 +19,7 @@ public class Exercicio1 {
 					indice2 = j;
 				}
 			}
-			System.out.println("\n");
+			System.out.println();
 		}
 		
 		System.out.print("O maior número encontrado na matriz m foi " +maior+ ", encontrado na linha " +indice1+ " e na coluna " +indice2+ ".");
