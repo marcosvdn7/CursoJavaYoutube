@@ -82,8 +82,8 @@ public class Exercicio6 {
 					}
 				}
 				turno++;
-				switch (turno) {
-				case 9:System.out.println(" -------------");
+				if (turno == 9 && fim == false) {
+					System.out.println(" -------------");
 					System.out.println(" | " +tabuleiro[0][0]+ " | " +tabuleiro[0][1]+ " | " +tabuleiro[0][2]+ " | ");
 					System.out.println(" -------------");
 					System.out.println(" | " +tabuleiro[1][0]+ " | " +tabuleiro[1][1]+ " | " +tabuleiro[1][2]+ " | ");
