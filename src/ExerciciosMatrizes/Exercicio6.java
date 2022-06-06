@@ -40,13 +40,6 @@ public class Exercicio6 {
 				opcao = read.nextInt();
 				while (opcao < 1 || opcao > 9 || verificar[opcao].equals(jogador[0]) || verificar[opcao].equals(jogador[1])) {
 					System.out.println("Escolha um campo válido!");
-					System.out.println(" -------------");
-					System.out.println(" | " +tabuleiro[0][0]+ " | " +tabuleiro[0][1]+ " | " +tabuleiro[0][2]+ " | ");
-					System.out.println(" -------------");
-					System.out.println(" | " +tabuleiro[1][0]+ " | " +tabuleiro[1][1]+ " | " +tabuleiro[1][2]+ " | ");
-					System.out.println(" -------------");
-					System.out.println(" | " +tabuleiro[2][0]+ " | " +tabuleiro[2][1]+ " | " +tabuleiro[2][2]+ " | ");
-					System.out.println(" -------------");
 					opcao = read.nextInt();
 				}
 				verificar[opcao] = jogador[i];
