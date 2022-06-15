@@ -1,6 +1,6 @@
-package ExerciciosOrientaçãoObjetoAula24;
+package ExerciciosOOAula27;
 
-public class Exercicio1 {
+public class Exercicio1Lampada {
 
 	public static void main(String[] args) {
 		Lampada lampada = new Lampada();
@@ -10,9 +10,16 @@ public class Exercicio1 {
 		lampada.potencia = 7;
 		lampada.garantiaMeses = 12;
 		lampada.tipoLuz = "Amarela";
-		lampada.tipos = new String[5];
-		String[] tipos = {"Abajur", "Lampeões", "Luminárias", "Pendentes", "Refletores"};
+		lampada.tipos = new String[3];
 		
+		lampada.acender();
+		
+		System.out.println("A lampada esta " +(lampada.acesa == false ? "apagada." : "acesa."));
+		
+		
+		
+		
+
 	}
 
 }
