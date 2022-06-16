@@ -53,7 +53,7 @@ public class Exercicio2ContaCorrente {
 			}
 			switch (opcao) {
 			case 3: conta1.consultarSaldo();break;
-			case 4: conta1.consultarEspecial(limiteMax);break;
+			case 4: conta1.consultarEspecial(conta1.especial);break;
 			case 5: encerrar = true;
 			}
 		}

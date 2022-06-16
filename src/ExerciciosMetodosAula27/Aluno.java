@@ -8,9 +8,13 @@ public class Aluno {
 	double [][] notas;
 	int numMatricula;
 	
+	double verificarMedia(double somaValores,double qtdValores) {
+		double media = somaValores / qtdValores;
+		return media;
+	}
+	
 	void verificarAprovacao(int indice) {
 		double somaNotas = 0;
-		double media;
 		int qtdNotas = 0;
 		System.out.println("---------------------------");
 		System.out.println("Disciplina: " +disciplinas[indice - 1]);
@@ -19,15 +23,13 @@ public class Aluno {
 			somaNotas += notas[indice - 1][i];
 			qtdNotas++;
 		}
-		media = somaNotas / qtdNotas;
-		System.out.println("Média: " +media);			
-		System.out.println("Status: " +(media >= 7 ? "Aprovado!" : "Reprovado!"));
+		System.out.println("Média: " +verificarMedia(somaNotas, qtdNotas));			
+		System.out.println("Status: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "Aprovado!" : "Reprovado!"));
 		System.out.println("---------------------------");
 	}
 		
 	void mostrarInformacoes() {
 		double somaNotas = 0;
-		double media;
 		int qtdNotas = 0;
 		System.out.println("---------------------------");
 		System.out.println("      Nome Aluno: " +nome);
@@ -43,9 +45,8 @@ public class Aluno {
 				somaNotas += notas[i][j];
 				qtdNotas++;
 			}
-			media = somaNotas / qtdNotas;
-			System.out.println("Média: " +media);
-			System.out.println("Status: " +(media >= 7 ? "Aprovado!" : "Reprovado!"));
+			System.out.println("Média: " +verificarMedia(somaNotas, qtdNotas));
+			System.out.println("Status: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "Aprovado!" : "Reprovado!"));
 			System.out.println("---------------------------");
 		}
 	}

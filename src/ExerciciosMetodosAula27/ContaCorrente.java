@@ -50,7 +50,7 @@ public class ContaCorrente {
 		System.out.println("Saldo Atual = " +saldo+ "\n");
 	}
 	
-	void consultarEspecial(double limiteMax) {
-		System.out.println("O cliente " +(especial == true ? "possui cheque especial.\nValor: " +limite+".\nValor Atual: " +limite : "o cliente nao possui cheque especial."));
+	void consultarEspecial(boolean especial) {
+		System.out.println("O cliente " +(especial == true ? "possui cheque especial.\nValor Atual: " +limite : "o cliente nao possui cheque especial."));
 	}
 }
