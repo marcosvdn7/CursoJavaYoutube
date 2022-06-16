@@ -34,21 +34,22 @@ public class ContaCorrente {
 	
 	void depositar (double valor, double limiteMax) {
 		if (especial == true && limite < limiteMax) {
-			valor -= valor * 0.2; 
+			//valor -= valor * 0.2; 
 			limite += valor;
 			saldo += valor;
 			if (limite > limiteMax) {
-				valor = limite - limiteMax;
+				limite = limiteMax;
+				valor -= limiteMax;
 				saldo += valor;
-			} 
-		} else if (especial == true && limite == limiteMax) {
+			}
+		} else if (limite == limiteMax || especial == false){
 			saldo += valor;
 		}
-		System.out.println("Deposito no valor de R$" +valor+ " feito com sucesso!");
+		System.out.println("Deposito no valor de R$" +valor+ " feito com sucesso!\n");
 	}
 	
 	void consultarSaldo () {
-		System.out.println("Saldo Atual = " +saldo);
+		System.out.println("Saldo Atual = " +saldo+ "\n");
 	}
 	
 	void consultarEspecial(double limiteMax) {

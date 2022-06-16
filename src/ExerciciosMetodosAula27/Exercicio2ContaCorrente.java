@@ -9,7 +9,6 @@ public class Exercicio2ContaCorrente {
 		Scanner read = new Scanner(System.in);
 		conta1.limite = 100;
 		conta1.saldo = 500;
-		conta1.especial = true;
 		
 		int opcao = 0;
 		boolean encerrar = false;
@@ -18,10 +17,22 @@ public class Exercicio2ContaCorrente {
 		
 		System.out.println("Informe o número da conta: ");
 		conta1.numConta = read.nextInt();
+		System.out.println("Essa conta utiliza cheque especial?");
+		System.out.println("1 - Sim.");
+		System.out.println("2 - Não.");
+		opcao = read.nextInt();
+		switch (opcao) {
+		case 1: System.out.println("Qual o limite do cheque especial?");
+				conta1.limite = read.nextDouble();
+				limiteMax = conta1.limite;
+				conta1.especial = true;break;
+		default: conta1.especial = false;break;
+		}
+		
 		
 		while (encerrar == false) {
 			System.out.println("-------------------------------");
-			System.out.println("Numero da conta " +conta1.numConta);
+			System.out.println("Numero da conta: " +conta1.numConta);
 			System.out.println("Possui cheque especial? " +(conta1.especial == true ? "Sim.\nLimite Especial: " +conta1.limite : "Não."));
 			System.out.println("Saldo Atual: " +conta1.saldo);
 			System.out.println("Escolha uma das opções: ");
