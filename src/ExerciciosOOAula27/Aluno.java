@@ -10,7 +10,7 @@ public class Aluno {
 	int [][] notas;
 	int numMatricula;
 	
-	void verificarAprovacao() {
+	/*void verificarAprovacao() {
 		double media;
 		int somaNotas = 0;
 		
@@ -35,6 +35,10 @@ public class Aluno {
 				System.out.println("-----------\n");
 			}
 		}
+	}*/
+	
+	boolean verificarAprovacao(double media) {
+		return media >= 7 ? true : false;
 	}
 	
 }
