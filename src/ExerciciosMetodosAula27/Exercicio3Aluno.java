@@ -7,9 +7,8 @@ public class Exercicio3Aluno {
 		Scanner read = new Scanner(System.in);
 		Aluno aluno1 = new Aluno();
 		aluno1.disciplinas = new String[3];
-		aluno1.notas = new double[3][3];
-		double media = 0;
-		double somaNotas = 0;
+		aluno1.notas = new double[aluno1.disciplinas.length][2];
+		int indice = 0;
 		
 		System.out.println("Informe o nome do aluno: ");
 		aluno1.nome = read.next();
@@ -23,19 +22,30 @@ public class Exercicio3Aluno {
 			aluno1.disciplinas[i] = read.next();
 		}
 		
-		for (int i = 0; i < aluno1.disciplinas.length; i++) {
-			for (int j = 0; j < aluno1.disciplinas.length - 1; j++) {
+		for (int i = 0; i < aluno1.notas.length; i++) {
+			for (int j = 0; j < aluno1.notas[i].length; j++) {
 				System.out.println("Informe a " +(j + 1)+ "ª nota da disciplina " +aluno1.disciplinas[i]+ ": ");
 				aluno1.notas[i][j] = read.nextInt();
-				somaNotas += aluno1.notas[i][j];
 			}
-			media = somaNotas / (aluno1.notas[i].length - 1);
-			somaNotas = 0;
-			aluno1.notas[i][aluno1.notas[i].length - 1] = media;
-			media = 0;
 		}
 		
-		aluno1.mostrarInformacoes();
+		while (indice != 5) {
+			System.out.println("\nSelecione a disciplina que deseja conferir sua nota: ");
+			for (int i = 0; i < aluno1.disciplinas.length; i++) {
+				System.out.println((i + 1)+ " - " +aluno1.disciplinas[i]);
+			}
+			System.out.println("4 - Mostrar Boletim Completo.");
+			System.out.println("5 - Sair.");
+			indice = read.nextInt();
+			if (indice >= 1 && indice <= 3) {
+				aluno1.verificarAprovacao(indice);
+			}
+			switch (indice) {
+			case 4: aluno1.mostrarInformacoes();break;
+			case 5: break;
+			}
+		}
+		
 		
 		read.close();
 	}

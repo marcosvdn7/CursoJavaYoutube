@@ -39,8 +39,6 @@ public class ContaCorrente {
 			saldo += valor;
 			if (limite > limiteMax) {
 				limite = limiteMax;
-				valor -= limiteMax;
-				saldo += valor;
 			}
 		} else if (limite == limiteMax || especial == false){
 			saldo += valor;
