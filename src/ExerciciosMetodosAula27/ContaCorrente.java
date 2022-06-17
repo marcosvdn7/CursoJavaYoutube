@@ -51,6 +51,6 @@ public class ContaCorrente {
 	}
 	
 	void consultarEspecial(boolean especial) {
-		System.out.println("O cliente " +(especial == true ? "possui cheque especial.\nValor Atual: " +limite : "o cliente nao possui cheque especial."));
+		System.out.println("O cliente possui cheque especial? " +(especial == true ? "Sim.\nValor Atual: " +limite : "Não."));
 	}
 }

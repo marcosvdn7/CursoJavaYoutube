@@ -64,8 +64,8 @@ public class JogoVelha {
 				tabuleiro[1][0] == sinalJogadores[i] && tabuleiro[1][1] == sinalJogadores[i] && tabuleiro[1][2] == sinalJogadores[i] ||
 				tabuleiro[2][0] == sinalJogadores[i] && tabuleiro[2][1] == sinalJogadores[i] && tabuleiro[2][2] == sinalJogadores[i] ||
 				tabuleiro[0][0] == sinalJogadores[i] && tabuleiro[1][0] == sinalJogadores[i] && tabuleiro[2][0] == sinalJogadores[i] || 
-				tabuleiro[1][0] == sinalJogadores[i] && tabuleiro[1][1] == sinalJogadores[i] && tabuleiro[1][2] == sinalJogadores[i] ||
-				tabuleiro[2][0] == sinalJogadores[i] && tabuleiro[2][1] == sinalJogadores[i] && tabuleiro[2][2] == sinalJogadores[i] ||
+				tabuleiro[0][1] == sinalJogadores[i] && tabuleiro[1][1] == sinalJogadores[i] && tabuleiro[2][1] == sinalJogadores[i] ||
+				tabuleiro[0][2] == sinalJogadores[i] && tabuleiro[1][2] == sinalJogadores[i] && tabuleiro[2][2] == sinalJogadores[i] ||
 				tabuleiro[0][0] == sinalJogadores[i] && tabuleiro[1][1] == sinalJogadores[i] && tabuleiro[2][2] == sinalJogadores[i] ||
 				tabuleiro[0][2] == sinalJogadores[i] && tabuleiro[1][1] == sinalJogadores[i] && tabuleiro[2][0] == sinalJogadores[i]){
 				fimJogo = true;
@@ -79,7 +79,7 @@ public class JogoVelha {
 	void mostrarVencedor(int rodada) {
 		if (fimJogo == true) {
 			mostrarTabuleiro();
-			System.out.println("O Jogador " +(rodada % 2 != 0 ? "1" : "1")+ " venceu.");
+			System.out.println("O Jogador " +(rodada % 2 != 0 ? "1" : "2")+ " venceu.");
 		} else if (fimJogo == false && rodada == 9) {
 			System.out.println("O jogo empatou!");
 			mostrarTabuleiro();

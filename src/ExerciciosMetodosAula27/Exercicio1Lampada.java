@@ -16,10 +16,9 @@ public class Exercicio1Lampada {
 		
 		System.out.println("A lampada esta " +(lampada.acesa == false ? "apagada." : "acesa."));
 		
+		lampada.apagar();
 		
-		
-		
-
+		System.out.println("A lampada esta " +(lampada.acesa == false ? "apagada." : "acesa."));
 	}
 
 }
