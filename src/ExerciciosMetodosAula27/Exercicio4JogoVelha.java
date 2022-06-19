@@ -20,7 +20,7 @@ public class Exercicio4JogoVelha {
 		
 		while (jogo.fimJogo == false) {
 			System.out.println("Rodada " +rodada);
-			System.out.println("\nJogador " +(rodada % 2 != 0 ? "1" : "2")+ " faça sua jogada");
+			System.out.println("\nJogador " +(rodada % 2 != 0 ? "1 (X)" : "2 (O)")+ " faça sua jogada");
 			jogo.mostrarTabuleiro();
 			opcao = read.nextInt();
 			while (opcao <= 0 || opcao > 9 || jogo.verificarJogada(opcao) == false) {
@@ -35,5 +35,4 @@ public class Exercicio4JogoVelha {
 			
 		read.close();
 	}
-
 }

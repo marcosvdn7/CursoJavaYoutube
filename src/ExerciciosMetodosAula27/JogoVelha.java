@@ -41,8 +41,8 @@ public class JogoVelha {
 	void mostrarTabuleiro() {
 		int num = 1;
 		for (int i = 0; i < tabuleiro.length; i++) {
-			System.out.print("-------------\n");
-			System.out.print("| ");
+			System.out.print(" -------------\n");
+			System.out.print(" | ");
 			for (int j = 0; j < tabuleiro[i].length; j++) {
 				if (camposJogados[num - 1].equals(sinalJogadores[0]) || camposJogados[num - 1].equals(sinalJogadores[1])) {
 					tabuleiro[i][j] = camposJogados[num - 1];
@@ -54,7 +54,7 @@ public class JogoVelha {
 					num++;
 				}
 			}
-			System.out.println(num == 10 ? "\n-------------" : "");
+			System.out.println(num == 10 ? "\n -------------" : "");
 		}
 	}	
 	
@@ -86,4 +86,28 @@ public class JogoVelha {
 			fimJogo = true;
 		}
 	}
+	
+	/*void verificarGanhador2() {
+		for (int i = 0, j = 0, count = 0, jogador = 1; count < 3;) {
+			if (tabuleiro[i][j] == sinalJogadores[jogador] && tabuleiro[i][j+1] == sinalJogadores[jogador] && tabuleiro[i][j+2] == sinalJogadores[jogador]){
+				fimJogo = true;
+				break;
+			} else if (tabuleiro[0][0] == sinalJogadores[jogador] && tabuleiro[1][1] == sinalJogadores[jogador] && tabuleiro[2][2] == sinalJogadores[jogador] ||
+					   tabuleiro[0][2] == sinalJogadores[jogador] && tabuleiro[1][1] == sinalJogadores[jogador] && tabuleiro[2][0] == sinalJogadores[jogador]){
+				fimJogo = true;
+				break;
+			}
+			if (jogador == 1) {
+				jogador = 2;
+			} else if (jogador == 2) {
+				jogador = 1;
+				count++;
+				i++;
+			}
+			if (count == 3) {
+				count = 0;
+				i = 0;
+			}
+		}
+	}*/
 }

@@ -2,10 +2,10 @@ package ExerciciosMetodosAula27;
 
 import java.util.Scanner;
 
-public class Exercicio2ContaCorrente {
+public class ExercicioContaCorrente2 {
 
 	public static void main(String[] args) {
-		ContaCorrente conta1 = new ContaCorrente();
+		ContaCorrente2 conta1 = new ContaCorrente2();
 		Scanner read = new Scanner(System.in);
 		conta1.saldo = 2000;
 		
@@ -32,8 +32,8 @@ public class Exercicio2ContaCorrente {
 		while (encerrar == false) {
 			System.out.println("-------------------------------");
 			System.out.println("Numero da conta: " +conta1.numConta);
-			System.out.println("Possui cheque especial? " +(conta1.especial == true ? "Sim.\nLimite Especial: R$" +conta1.limite : "Não."));
-			System.out.println("Saldo Atual: R$" +conta1.saldo);
+			System.out.println("Possui cheque especial? " +(conta1.especial == true ? "Sim.\nLimite Especial: " +conta1.limite : "Não."));
+			System.out.println("Saldo Atual: " +conta1.saldo);
 			System.out.println("Escolha uma das opções: ");
 			System.out.println("1 - Sacar.");
 			System.out.println("2 - Depositar.");
@@ -46,23 +46,19 @@ public class Exercicio2ContaCorrente {
 				System.out.println("Informe a quantidade que deseja " +(opcao == 1 ? "sacar: " : "depositar: "));
 				valor = read.nextInt();
 				switch(opcao) {
-				case 1: 
-					if (conta1.sacar(valor)) {
-						System.out.println("O saque no valor de R$" +valor+ " foi realizado com sucesso!\n");break;
-					} else {
-						System.out.println("Não foi possível realizar o saque! Tente novamente.\n");break;
-					}
-				case 2:	conta1.depositar(valor, limiteMax); 
-					 	System.out.println("O depósito no valor de R$" +valor+ " foi realizado com sucesso!");break;
+				case 1: conta1.sacar(valor);break;
+				case 2:	conta1.depositar(valor, limiteMax);break;
 				} 
 			}
 			switch (opcao) {
-			case 3: System.out.println("Saldo Atual: R$" +conta1.consultarSaldo());;break;
-			case 4: System.out.println((conta1.consultarEspecial() ? "O cliente possui crédito especial no valor de R$" +conta1.limite : "Essa conta não possui crédito especial."));break;
+			case 3: conta1.consultarSaldo();break;
+			case 4: conta1.consultarEspecial(conta1.especial);break;
 			case 5: encerrar = true;
 			}
 		}
 		
 		read.close();
+
 	}
+
 }
