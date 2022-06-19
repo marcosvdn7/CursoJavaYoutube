@@ -8,7 +8,9 @@ public class Exercicio3Aluno {
 		Aluno aluno1 = new Aluno();
 		aluno1.disciplinas = new String[3];
 		aluno1.notas = new double[aluno1.disciplinas.length][2];
-		int indice = 0;
+		int opcao = 0;
+		double somaNotas = 0;
+		int qtdNotas = 0;
 		
 		System.out.println("Informe o nome do aluno: ");
 		aluno1.nome = read.next();
@@ -29,21 +31,31 @@ public class Exercicio3Aluno {
 			}
 		}
 		
-		while (indice != 5) {
+		while (opcao != aluno1.disciplinas.length + 2) {
 			System.out.println("\nSelecione a disciplina que deseja conferir sua nota: ");
 			for (int i = 0; i < aluno1.disciplinas.length; i++) {
 				System.out.println((i + 1)+ " - " +aluno1.disciplinas[i]);
 			}
-			System.out.println("4 - Mostrar Boletim Completo.");
-			System.out.println("5 - Sair.");
-			indice = read.nextInt();
-			if (indice >= 1 && indice <= 3) {
-				aluno1.verificarAprovacao(indice);
+			System.out.println(aluno1.disciplinas.length + 1+ " - Mostrar Boletim Completo.");
+			System.out.println(aluno1.disciplinas.length + 2+ " - Sair.");
+			opcao = read.nextInt();
+			if (opcao <= aluno1.disciplinas.length) {
+				System.out.println("---------------------------");
+				System.out.println("Disciplina: " +aluno1.disciplinas[opcao - 1]);
+				for (int i = 0; i < 1; i++) {
+					for (int j = 0; j < aluno1.notas[i].length; j++) {
+						System.out.println("Nota " +(j + 1)+ ": " +aluno1.notas[opcao - 1][j]);
+						somaNotas += aluno1.notas[opcao - 1][j];
+						qtdNotas++;
+					}
+					System.out.println("Média: " +aluno1.verificarMedia(somaNotas, qtdNotas));
+					System.out.println("Situação: " +(aluno1.verificarMedia(somaNotas, qtdNotas) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
+				}
+			} else if (opcao == aluno1.disciplinas.length + 1) {
+				aluno1.mostrarInformacoes();
 			}
-			switch (indice) {
-			case 4: aluno1.mostrarInformacoes();break;
-			case 5: break;
-			}
+			somaNotas = 0;
+			qtdNotas = 0;
 		}
 		
 		

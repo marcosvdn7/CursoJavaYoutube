@@ -13,21 +13,6 @@ public class Aluno {
 		return media;
 	}
 	
-	void verificarAprovacao(int indice) {
-		double somaNotas = 0;
-		int qtdNotas = 0;
-		System.out.println("---------------------------");
-		System.out.println("Disciplina: " +disciplinas[indice - 1]);
-		for (int i = 0; i < notas[indice - 1].length; i++) {
-			System.out.println("Nota " +(i + 1)+ ": " +notas[indice - 1][i]);
-			somaNotas += notas[indice - 1][i];
-			qtdNotas++;
-		}
-		System.out.println("Média: " +verificarMedia(somaNotas, qtdNotas));			
-		System.out.println("Status: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "Aprovado!" : "Reprovado!"));
-		System.out.println("---------------------------");
-	}
-		
 	void mostrarInformacoes() {
 		double somaNotas = 0;
 		int qtdNotas = 0;
@@ -46,7 +31,7 @@ public class Aluno {
 				qtdNotas++;
 			}
 			System.out.println("Média: " +verificarMedia(somaNotas, qtdNotas));
-			System.out.println("Status: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "Aprovado!" : "Reprovado!"));
+			System.out.println("Situação: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
 			System.out.println("---------------------------");
 		}
 	}
