@@ -1,15 +1,16 @@
 package ExerciciosMetodosAula27;
 
-public class JogoVelha {
-	
-	String[][] tabuleiro;
-	String[] sinalJogadores = {"X", "O"};
-	String[] camposJogados = {"", "", "", "", "", "", "", "", "", ""};
+public class classeTeste {
+
+	char[][] tabuleiro = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+	char[] sinalJogadores = {'X', 'O'};
+	char[] camposJogados = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 	boolean fimJogo;
+	int opcao;
 	int rodada = 0;
 	
 	void fazerJogada(int rodada, int opcao) {
-		String sinal;
+		char sinal;
 		if (rodada % 2 != 0) {
 			sinal =  sinalJogadores[0];
 		} else {
@@ -30,10 +31,11 @@ public class JogoVelha {
 	}
 	
 	boolean verificarJogada(int opcao) {
-		if (camposJogados[opcao - 1].equals(sinalJogadores[0]) || camposJogados[opcao - 1].equals(sinalJogadores[1])) {
+		if (camposJogados[opcao - 1] == sinalJogadores[0] || camposJogados[opcao - 1] == sinalJogadores[1]) {
 			return false;
-		} 
-		return true;
+		} else {
+			return true;
+		}
 	}
 	
 	void mostrarTabuleiro() {
@@ -42,12 +44,11 @@ public class JogoVelha {
 			System.out.print(" -------------\n");
 			System.out.print(" | ");
 			for (int j = 0; j < tabuleiro[i].length; j++) {
-				if (camposJogados[num - 1].equals(sinalJogadores[0]) || camposJogados[num - 1].equals(sinalJogadores[1])) {
+				if (camposJogados[opcao] == sinalJogadores[0] || camposJogados[opcao] == sinalJogadores[1]) {
 					tabuleiro[i][j] = camposJogados[num - 1];
 					System.out.print(tabuleiro[i][j]+ " | ");
 					num++;
 				} else {
-					tabuleiro[i][j] = "" +num;
 					System.out.print(tabuleiro[i][j]+ " | ");
 					num++;
 				}
@@ -84,4 +85,28 @@ public class JogoVelha {
 			fimJogo = true;
 		}
 	}
+	
+	/*void verificarGanhador2() {
+		for (int i = 0, j = 0, count = 0, jogador = 1; count < 3;) {
+			if (tabuleiro[i][j] == sinalJogadores[jogador] && tabuleiro[i][j+1] == sinalJogadores[jogador] && tabuleiro[i][j+2] == sinalJogadores[jogador]){
+				fimJogo = true;
+				break;
+			} else if (tabuleiro[0][0] == sinalJogadores[jogador] && tabuleiro[1][1] == sinalJogadores[jogador] && tabuleiro[2][2] == sinalJogadores[jogador] ||
+					   tabuleiro[0][2] == sinalJogadores[jogador] && tabuleiro[1][1] == sinalJogadores[jogador] && tabuleiro[2][0] == sinalJogadores[jogador]){
+				fimJogo = true;
+				break;
+			}
+			if (jogador == 1) {
+				jogador = 2;
+			} else if (jogador == 2) {
+				jogador = 1;
+				count++;
+				i++;
+			}
+			if (count == 3) {
+				count = 0;
+				i = 0;
+			}
+		}
+	}*/
 }

@@ -29,7 +29,9 @@ public class Exercicio4JogoVelha {
 			}
 			jogo.fazerJogada(rodada, opcao);
 			jogo.verificarGanhador();
+			System.out.println("-------------");
 			jogo.mostrarVencedor(rodada);
+			System.out.println("-------------");
 			rodada++;
 			}
 			

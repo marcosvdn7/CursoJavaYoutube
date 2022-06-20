@@ -8,14 +8,23 @@ public class Aluno {
 	double [][] notas;
 	int numMatricula;
 	
-	double verificarMedia(double somaValores,double qtdValores) {
-		double media = somaValores / qtdValores;
-		return media;
+	double verificarMedia(int indice) {
+		double somaNotas = 0;
+		for (int i = 0; i < notas[indice].length; i++) {
+			somaNotas += notas[indice][i];
+		}
+		return somaNotas / notas[indice].length;
+	}
+	
+	boolean verificarAprovacao(int indice) {
+		if (verificarMedia(indice) >= 7) {
+			return true;
+		}
+		return false;
 	}
 	
 	void mostrarInformacoes() {
-		double somaNotas = 0;
-		int qtdNotas = 0;
+		boolean aprovacaoGeral = true;
 		System.out.println("---------------------------");
 		System.out.println("      Nome Aluno: " +nome);
 		System.out.println("   Número Matricula: " +numMatricula);
@@ -23,16 +32,17 @@ public class Aluno {
 		System.out.println("---------------------------");
 		for (int i = 0; i < disciplinas.length; i++) {
 			System.out.println("Disciplina: " +disciplinas[i]);
-			qtdNotas = 0;
-			somaNotas = 0;
 			for (int j = 0; j < notas[i].length; j++) {
 				System.out.println("Nota " +(j + 1)+ ": " +notas[i][j]);
-				somaNotas += notas[i][j];
-				qtdNotas++;
 			}
-			System.out.println("Média: " +verificarMedia(somaNotas, qtdNotas));
-			System.out.println("Situação: " +(verificarMedia(somaNotas, qtdNotas) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
+			if (verificarMedia(i) <= 7) {
+				aprovacaoGeral = false;
+			}
+			System.out.println("Média: " +verificarMedia(i));
+			System.out.println("Situação: " +(verificarMedia(i) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
 			System.out.println("---------------------------");
 		}
+		System.out.println("Situação Geral: " +(aprovacaoGeral == true ? "APROVADO!!" : "REPROVADO!!"));
+		System.out.println("---------------------------");
 	}
 }

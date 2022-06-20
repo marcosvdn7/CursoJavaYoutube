@@ -9,8 +9,6 @@ public class Exercicio3Aluno {
 		aluno1.disciplinas = new String[3];
 		aluno1.notas = new double[aluno1.disciplinas.length][2];
 		int opcao = 0;
-		double somaNotas = 0;
-		int qtdNotas = 0;
 		
 		System.out.println("Informe o nome do aluno: ");
 		aluno1.nome = read.next();
@@ -42,23 +40,16 @@ public class Exercicio3Aluno {
 			if (opcao <= aluno1.disciplinas.length) {
 				System.out.println("---------------------------");
 				System.out.println("Disciplina: " +aluno1.disciplinas[opcao - 1]);
-				for (int i = 0; i < 1; i++) {
-					for (int j = 0; j < aluno1.notas[i].length; j++) {
-						System.out.println("Nota " +(j + 1)+ ": " +aluno1.notas[opcao - 1][j]);
-						somaNotas += aluno1.notas[opcao - 1][j];
-						qtdNotas++;
+					for (int i = 0; i < aluno1.notas[i].length; i++) {
+						System.out.println("Nota " +(i + 1)+ ": " +aluno1.notas[opcao - 1][i]);
 					}
-					System.out.println("Média: " +aluno1.verificarMedia(somaNotas, qtdNotas));
-					System.out.println("Situação: " +(aluno1.verificarMedia(somaNotas, qtdNotas) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
-				}
+					System.out.println("Média: " +aluno1.verificarMedia(opcao - 1));
+					System.out.println("Situação: " +(aluno1.verificarAprovacao(opcao - 1) == true ? "APROVADO!!" : "REPROVADO!!"));
+					System.out.println("---------------------------");
 			} else if (opcao == aluno1.disciplinas.length + 1) {
 				aluno1.mostrarInformacoes();
 			}
-			somaNotas = 0;
-			qtdNotas = 0;
 		}
-		
-		
 		read.close();
 	}
 }

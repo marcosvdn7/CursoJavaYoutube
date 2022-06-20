@@ -57,8 +57,8 @@ public class Exercicio2ContaCorrente {
 				} 
 			}
 			switch (opcao) {
-			case 3: System.out.println("Saldo Atual: R$" +conta1.consultarSaldo());;break;
-			case 4: System.out.println((conta1.consultarEspecial() ? "O cliente possui crédito especial no valor de R$" +conta1.limite : "Essa conta não possui crédito especial."));break;
+			case 3: conta1.consultarSaldo();break;
+			case 4: System.out.println(conta1.consultarEspecial() == true ? "Essa conta está usando o cheque especial." : "Essa conta não está usando cheque especial.");break;
 			case 5: encerrar = true;
 			}
 		}

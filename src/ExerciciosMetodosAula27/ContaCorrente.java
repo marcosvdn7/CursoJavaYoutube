@@ -10,7 +10,7 @@ public class ContaCorrente {
 	boolean sacar (double valor) {
 		double resto = 0;
 		boolean valido = false;
-		if (valor > saldo + limite && saldo >= 0) {
+		if (valor > saldo + limite) {
 			valido = false;
 		} else if (valor <= saldo) {
 			saldo -= valor;
@@ -46,11 +46,15 @@ public class ContaCorrente {
 		}
 	}
 	
-	double consultarSaldo () {
-		return saldo;
+	void consultarSaldo () {
+		System.out.println("Saldo atual: R$" +saldo);
 	}
 	
 	boolean consultarEspecial() {
-		return especial;
+		if (saldo < 0 && especial == true) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
