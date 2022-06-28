@@ -1,20 +1,62 @@
-package Aula30This;
+package ExerciciosAula28a33;
 
-public class ExemploThisClasseAluno {
+public class Aluno {
 	
-	String nome;
-	String curso;
-	String[] disciplinas;
-	double [][] notas;
-	int numMatricula;
+	private String nome;
+	private String curso;
+	private String[] disciplinas;
+	private double [][] notas;
+	private int numMatricula;
 	
-	public ExemploThisClasseAluno(String nome, String curso, String[] disciplinas, double[][] notas, int numMatricula) {
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	public String[] getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(String[] disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
+	public double[][] getNotas() {
+		return notas;
+	}
+
+	public void setNotas(double[][] notas) {
+		this.notas = notas;
+	}
+
+	public int getNumMatricula() {
+		return numMatricula;
+	}
+
+	public void setNumMatricula(int numMatricula) {
+		this.numMatricula = numMatricula;
+	}
+
+	public Aluno(String nome, String curso, String[] disciplinas, double[][] notas, int numMatricula) {
 		this.nome = nome;
 		this.curso = curso;
 		this.disciplinas = disciplinas;
 		this.notas = notas;
 		this.numMatricula = numMatricula;
 	}
+	
+	public Aluno(){ }
 	
 	double verificarMedia(int indice) {
 		double somaNotas = 0;
