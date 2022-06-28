@@ -8,21 +8,15 @@ public class Exercicio3Aluno {
 		Scanner read = new Scanner(System.in);
 		Aluno aluno1 = new Aluno();
 		int opcao = 0;
-		int numMatricula;
-		String curso;
-		String nome;
 		String[] disciplinas = new String[3];
 		double[][] notas = new double[3][2];
 		
 		System.out.println("Informe o nome do aluno: ");
-		nome = read.next();
-		aluno1.setNome(nome);
+		aluno1.setNome(read.next());;
 		System.out.println("Informe o número de matrícula do aluno: ");
-		numMatricula = read.nextInt();
-		aluno1.setNumMatricula(numMatricula);
+		aluno1.setNumMatricula(read.nextInt());
 		System.out.println("Informe o curso em que o aluno está matriculado: ");
-		curso = read.next();
-		aluno1.setCurso(curso);
+		aluno1.setCurso(read.next());
 		
 		for (int i = 0; i < disciplinas.length; i++) {
 			System.out.println("Informe a " +(i + 1)+ "ª disciplina: ");
