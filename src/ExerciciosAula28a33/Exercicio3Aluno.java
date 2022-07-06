@@ -13,20 +13,20 @@ public class Exercicio3Aluno {
 		
 		System.out.println("Informe o nome do aluno: ");
 		aluno1.setNome(read.next());;
-		System.out.println("Informe o número de matrícula do aluno: ");
+		System.out.println("Informe o nÃºmero de matrÃ­cula do aluno: ");
 		aluno1.setNumMatricula(read.nextInt());
-		System.out.println("Informe o curso em que o aluno está matriculado: ");
+		System.out.println("Informe o curso em que o aluno estÃ¡ matriculado: ");
 		aluno1.setCurso(read.next());
 		
 		for (int i = 0; i < disciplinas.length; i++) {
-			System.out.println("Informe a " +(i + 1)+ "ª disciplina: ");
+			System.out.println("Informe a " +(i + 1)+ "Âª disciplina: ");
 			disciplinas[i] = read.next();
 			aluno1.setDisciplinas(disciplinas);
 		}
 		
 		for (int i = 0; i < notas.length; i++) {
 			for (int j = 0; j < notas[i].length; j++) {
-				System.out.println("Informe a " +(j + 1)+ "ª nota da disciplina " +disciplinas[i]+ ": ");
+				System.out.println("Informe a " +(j + 1)+ "Âª nota da disciplina " +disciplinas[i]+ ": ");
 				notas[i][j] = read.nextInt();
 				aluno1.setNotas(notas);
 			}
@@ -46,8 +46,8 @@ public class Exercicio3Aluno {
 					for (int i = 0; i < notas[i].length; i++) {
 						System.out.println("Nota " +(i + 1)+ ": " +aluno1.getNotas()[opcao - 1][i]);
 					}
-					System.out.println("Média: " +aluno1.verificarMedia(opcao - 1));
-					System.out.println("Situação: " +(aluno1.verificarAprovacao(opcao - 1) == true ? "APROVADO!!" : "REPROVADO!!"));
+					System.out.println("MÃ©dia: " +aluno1.verificarMedia(opcao - 1));
+					System.out.println("SituaÃ§Ã£o: " +(aluno1.verificarAprovacao(opcao - 1) == true ? "APROVADO!!" : "REPROVADO!!"));
 					System.out.println("---------------------------");
 			} else if (opcao == disciplinas.length + 1) {
 				aluno1.mostrarInformacoes();

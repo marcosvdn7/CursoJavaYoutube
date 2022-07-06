@@ -7,7 +7,7 @@ public class Exercicio15 {
 		int num2 = 1;
 		int resultado;
 		
-		for (int i = 0 ; i < 25; i++) {
+		for (int i = 0 ; i < 10; i++) {
 			System.out.print(num+ " ");
 			resultado = num + num2;
 			num = num2;

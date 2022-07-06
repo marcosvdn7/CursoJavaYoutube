@@ -1,12 +1,20 @@
 package ExerciciosAula28a33;
 
 public class Aluno {
-	
+
 	private String nome;
 	private String curso;
 	private String[] disciplinas;
 	private double [][] notas;
 	private int numMatricula;
+	
+	public Aluno(String nome, String curso, String[] disciplinas, double[][] notas, int numMatricula) {
+		this.nome = nome;
+		this.curso = curso;
+		this.disciplinas = disciplinas;
+		this.notas = notas;
+		this.numMatricula = numMatricula;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -48,14 +56,6 @@ public class Aluno {
 		this.numMatricula = numMatricula;
 	}
 
-	public Aluno(String nome, String curso, String[] disciplinas, double[][] notas, int numMatricula) {
-		this.nome = nome;
-		this.curso = curso;
-		this.disciplinas = disciplinas;
-		this.notas = notas;
-		this.numMatricula = numMatricula;
-	}
-	
 	public Aluno(){ }
 	
 	double verificarMedia(int indice) {
@@ -77,7 +77,7 @@ public class Aluno {
 		boolean aprovacaoGeral = true;
 		System.out.println("---------------------------");
 		System.out.println("      Nome Aluno: " +nome);
-		System.out.println("   Número Matricula: " +numMatricula);
+		System.out.println("   NÃºmero Matricula: " +numMatricula);
 		System.out.println("      Curso: " +curso);
 		System.out.println("---------------------------");
 		for (int i = 0; i < this.disciplinas.length; i++) {
@@ -85,14 +85,21 @@ public class Aluno {
 			for (int j = 0; j < this.notas[i].length; j++) {
 				System.out.println("Nota " +(j + 1)+ ": " +this.notas[i][j]);
 			}
-			if (this.verificarMedia(i) <= 7) {
+			if (this.verificarMedia(i) < 7) {
 				aprovacaoGeral = false;
 			}
-			System.out.println("Média: " +this.verificarMedia(i));
-			System.out.println("Situação: " +(this.verificarMedia(i) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
+			System.out.println("MÃ©dia: " +this.verificarMedia(i));
+			System.out.println("SituaÃ§Ã£o: " +(this.verificarMedia(i) >= 7 ? "APROVADO!!" : "REPROVADO!!"));
 			System.out.println("---------------------------");
 		}
-		System.out.println("Situação Geral: " +(aprovacaoGeral == true ? "APROVADO!!" : "REPROVADO!!"));
+		System.out.println("SituaÃ§Ã£o Geral: " +(aprovacaoGeral == true ? "APROVADO!!" : "REPROVADO!!"));
 		System.out.println("---------------------------");
+	}
+	
+	void registrarDisciplinas() {
+		
+		
+		
+		
 	}
 }

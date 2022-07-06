@@ -11,8 +11,7 @@ public class Exercicio1 {
 		lampada.garantiaMeses = 12;
 		lampada.tipoLuz = "Amarela";
 		lampada.tipos = new String[5];
-		//String[] tipos = {"Abajur", "Lampeões", "Luminárias", "Pendentes", "Refletores"};
-		
+		//String[] tipos = {"Abajur", "Lampeões", "Luminárias", "Pendentes", "Refletores"};		
 	}
 
 }
