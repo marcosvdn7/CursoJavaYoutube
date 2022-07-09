@@ -1,10 +1,10 @@
-package ExerciciosAula36RelaçãoClasses;
+package ExerciciosAula36RelacionamentoClasses;
 
 public class Contato {
 
-	String nome;
-	String telefone;
-	String email;
+	private String nome;
+	private String telefone;
+	private String email;
 	
 	public String getNome() {
 		return nome;
@@ -29,5 +29,4 @@ public class Contato {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 }
