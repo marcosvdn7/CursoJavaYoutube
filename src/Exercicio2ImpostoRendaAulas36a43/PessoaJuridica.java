@@ -1,24 +1,23 @@
 package Exercicio2ImpostoRendaAulas36a43;
 
 public class PessoaJuridica extends Contribuinte {
-
-	private Contribuinte[] contribuintes;
 	
+	private String cnpj;
+
 	public PessoaJuridica() {
-		this.contribuintes = new Contribuinte[3];
 	}
 
-	public Contribuinte[] getContribuintes() {
-		return contribuintes;
+	public String getCnpj() {
+		return cnpj;
+	}
+ 
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
-	public void setContribuintes(Contribuinte[] contribuintes) {
-		this.contribuintes = contribuintes;
-	}
-	
+
 	public double calcularImposto() {
-		super.setRendaLiquida(super.getRendaBruta() - 0.10);
 		
-		return super.getRendaLiquida();
+		return super.getRendaBruta() * 0.1;
 	}
 }

@@ -1,6 +1,6 @@
 package Exercicio2ImpostoRendaAulas36a43;
 
-public class Contribuinte {
+public abstract class Contribuinte {
 	private String nome;
 	private double rendaBruta;
 	private double rendaLiquida;
@@ -29,9 +29,6 @@ public class Contribuinte {
 		this.rendaLiquida = rendaLiquida;
 	}
 
-	public double calcularImposto() {
-		
-		return this.rendaLiquida;
-	}
+	public abstract double calcularImposto();
 	
 }

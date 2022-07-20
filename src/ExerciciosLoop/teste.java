@@ -1,29 +1,33 @@
 package ExerciciosLoop;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class teste {
 
 	public static void main(String[] args) {
 		Scanner read = new Scanner(System.in);
-		int num;
-		int i = 1;
-		double resultado = 1;
-		System.out.println("Digite um número inteiro positivo: ");
-		num = read.nextInt();
+		int x = 0;
+		int y = 0;
+		double r = 0;
+		boolean encerrar = false;
 		
-		while (i <= num) {
-			if (num <= 1) {
-				System.out.println("Não é um número primo.");
+		while (true) {
+			try {
+				System.out.println("Informe o primeiro valor: ");
+				x = read.nextInt();
+				
+				System.out.println("Informe o segundo valor: ");
+				y = read.nextInt();
+				
+				r = x / y;
+				
+				System.out.println(r);
+				
 				break;
+				
+			} catch (InputMismatchException | ArithmeticException exception) {
+				System.out.println("Informe números inteiro diferente de 0.");
 			}
-			resultado = num % i;
-			i++;
 		}
-		if (resultado == 0) {
-			System.out.println(num+ " é um número primo.");
-		} else {
-			System.out.println(num+ " não é um número primo.");
-		}
-	
 		read.close();
 	}
 }
